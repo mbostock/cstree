@@ -11,10 +11,8 @@
     "name": "Mike Bostock",
     "url": "https://bost.ocks.org/mike"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mbostock/cstree.git"
-  },
+  "homepage": "https://github.com/mbostock/cstree",
+  "repository": "https://github.com/mbostock/cstree",
   "files": [
     "dist/**/*.js",
     "src/**/*.js"
@@ -26,12 +24,12 @@
     "d3-dsv": "1"
   },
   "devDependencies": {
-    "rollup": "*",
-    "rollup-plugin-node-resolve": "*",
-    "rollup-plugin-terser": "*"
+    "rollup": "1",
+    "rollup-plugin-node-resolve": "4",
+    "rollup-plugin-terser": "4"
   },
   "scripts": {
     "prepublishOnly": "rm -rf dist && rollup -c",
-    "postpublish": "git push && git push --tags && zip -j dist/${npm_package_name}.zip -- LICENSE README.md dist/${npm_package_name}.js dist/${npm_package_name}.min.js"
+    "postpublish": "git push && git push --tags"
   }
 }
