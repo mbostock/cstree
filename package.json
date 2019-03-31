@@ -1,0 +1,37 @@
+{
+  "name": "cstree",
+  "version": "0.0.0",
+  "description": "Comma-separated tree",
+  "keywords": [
+    "csv",
+    "comma-separated values"
+  ],
+  "license": "ISC",
+  "author": {
+    "name": "Mike Bostock",
+    "url": "https://bost.ocks.org/mike"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbostock/cstree.git"
+  },
+  "files": [
+    "dist/**/*.js",
+    "src/**/*.js"
+  ],
+  "main": "dist/cstree.js",
+  "unpkg": "dist/cstree.min.js",
+  "module": "src/index.js",
+  "dependencies": {
+    "d3-dsv": "1"
+  },
+  "devDependencies": {
+    "rollup": "*",
+    "rollup-plugin-node-resolve": "*",
+    "rollup-plugin-terser": "*"
+  },
+  "scripts": {
+    "prepublishOnly": "rm -rf dist && rollup -c",
+    "postpublish": "git push && git push --tags && zip -j dist/${npm_package_name}.zip -- LICENSE README.md dist/${npm_package_name}.js dist/${npm_package_name}.min.js"
+  }
+}
